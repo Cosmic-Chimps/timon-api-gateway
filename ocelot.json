@@ -1,11 +1,12 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/function/get-links",
+      "DownstreamPathTemplate": "/",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "get-links.openfaas-fn.svc"
+          "Host": "get-links.openfaas-fn.svc",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/get-links",
