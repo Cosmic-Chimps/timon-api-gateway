@@ -8,7 +8,7 @@
           "Host": "get-links.openfaas-fn.svc"
         }
       ],
-      "UpstreamPathTemplate": "get-links",
+      "UpstreamPathTemplate": "/get-links",
       "UpstreamHttpMethod": [
         "Get"
       ]
