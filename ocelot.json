@@ -1,21 +1,20 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/todos/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/function/get-links",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "jsonplaceholder.typicode.com",
-          "Port": 443
+          "Host": "get-links.openfaas-fn.svc"
         }
       ],
-      "UpstreamPathTemplate": "/todos/{id}",
+      "UpstreamPathTemplate": "get-links",
       "UpstreamHttpMethod": [
         "Get"
       ]
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://0.0.0.0:8080"
+    "BaseUrl": "http://api-gateway-myproject.127.0.0.1.nip.io/"
   }
 }
