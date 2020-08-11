@@ -18,6 +18,6 @@ USER docker
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENV ASPNETCORE_ENVIRONMENT=Production
-ENV ASPNETCORE_URLS="http://localhost:8000"
+ENV ASPNETCORE_URLS="http://localhost:8080"
 EXPOSE 8080
 ENTRYPOINT ["dotnet", "ApiGateway.dll"]
