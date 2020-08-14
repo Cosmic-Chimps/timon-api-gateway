@@ -12,6 +12,40 @@
       "UpstreamPathTemplate": "/get-links",
       "UpstreamHttpMethod": [
         "Get"
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": [
+          "timon"
+        ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-identity-server.openfaas-fn.svc",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/login",
+      "UpstreamHttpMethod": [
+        "Post"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-identity-server.openfaas-fn.svc",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/register",
+      "UpstreamHttpMethod": [
+        "Post"
       ]
     }
   ],

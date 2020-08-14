@@ -1,8 +1,11 @@
 ﻿using System;
 using System.IO;
+using IdentityServer4.AccessTokenValidation;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.DependencyInjection;
 
@@ -27,6 +30,15 @@ namespace ApiGateway
         }
       };
       
+      var authenticationProviderKey = "TestKey";
+      // Action<IdentityServerAuthenticationOptions> options = o =>
+      // {
+      //   o.Authority = "https://whereyouridentityserverlives.com";
+      //   o.ApiName = "api";
+      //   o.SupportedTokens = SupportedTokens.Both;
+      //   o.ApiSecret = "secret";
+      // };
+      
       new WebHostBuilder()
          .UseKestrel()
          .UseContentRoot(Directory.GetCurrentDirectory())
@@ -41,6 +53,15 @@ namespace ApiGateway
          })
          .ConfigureServices(s =>
          {
+           s.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+             .AddIdentityServerAuthentication(authenticationProviderKey, options =>
+             {
+               // base-address of your identityserver
+               options.Authority = "https://localhost:5001";
+               // name of the API resource
+               options.ApiName = "api1";
+               options.ApiSecret = "secret";
+             });
            s.AddOcelot();
          })
          .ConfigureLogging((hostingContext, logging) =>
