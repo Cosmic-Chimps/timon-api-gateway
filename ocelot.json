@@ -22,11 +22,11 @@
     },
     {
       "DownstreamPathTemplate": "/login",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "timon-identity-server.openfaas-fn.svc",
-          "Port": 8443
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/login",
@@ -36,11 +36,11 @@
     },
     {
       "DownstreamPathTemplate": "/register",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "timon-identity-server.openfaas-fn.svc",
-          "Port": 8443
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/register",

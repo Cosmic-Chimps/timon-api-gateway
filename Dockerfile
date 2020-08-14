@@ -18,9 +18,9 @@ USER docker
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENV ASPNETCORE_ENVIRONMENT=Production
-ENV ASPNETCORE_URLS="http://*:8080;https://*:8443"
+#ENV ASPNETCORE_URLS="http://*:8080;https://*:8443"
+ENV ASPNETCORE_URLS="http://*:8080"
 EXPOSE 8080
-EXPOSE 8443
-RUN dotnet dev-certs https --clean
-RUN dotnet dev-certs https --trust
+#EXPOSE 8443
+
 ENTRYPOINT ["dotnet", "ApiGateway.dll"]
