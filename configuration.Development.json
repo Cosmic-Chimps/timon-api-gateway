@@ -1,0 +1,68 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/link",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamPathTemplate": "/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-links.127.0.0.1.nip.io",
+          "Port": 5004
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/link",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-links.127.0.0.1.nip.io",
+          "Port": 5004
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": [
+        ]
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/login",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
+      "DownstreamPathTemplate": "/login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-identity.127.0.0.1.nip.io",
+          "Port": 5000
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/register",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
+      "DownstreamPathTemplate": "/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-identity.127.0.0.1.nip.io",
+          "Port": 5000
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://api-gateway-myproject.127.0.0.1.nip.io/"
+  }
+}

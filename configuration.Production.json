@@ -1,17 +1,31 @@
 {
   "Routes": [
     {
+      "UpstreamPathTemplate": "/link",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
       "DownstreamPathTemplate": "/",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5004
+          "Host": "links.openfaas-fn.svc",
+          "Port": 8080
         }
-      ],
-      "UpstreamPathTemplate": "/get-links",
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/link",
       "UpstreamHttpMethod": [
-        "Get"
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "links.openfaas-fn.svc",
+          "Port": 8080
+        }
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "TimonIdentityServer",
@@ -20,6 +34,10 @@
       }
     },
     {
+      "UpstreamPathTemplate": "/login",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
       "DownstreamPathTemplate": "/login",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -27,18 +45,13 @@
           "Host": "timon-identity-server.openfaas-fn.svc",
           "Port": 8080
         }
-      ],
-      "UpstreamPathTemplate": "/login",
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/register",
       "UpstreamHttpMethod": [
         "Post"
       ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "TimonIdentityServer",
-        "AllowedScopes": [
-        ]
-      }
-    },
-    {
       "DownstreamPathTemplate": "/register",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -46,14 +59,10 @@
           "Host": "timon-identity-server.openfaas-fn.svc",
           "Port": 8080
         }
-      ],
-      "UpstreamPathTemplate": "/register",
-      "UpstreamHttpMethod": [
-        "Post"
       ]
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5000/"
+    "BaseUrl": "http://api-gateway-myproject.127.0.0.1.nip.io/"
   }
 }

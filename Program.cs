@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Ocelot.Middleware;
 using Ocelot.DependencyInjection;
 
@@ -15,66 +17,68 @@ namespace ApiGateway
   {
     static void Main(string[] args)
     {
-      var conf = new OcelotPipelineConfiguration()
-      {
-        PreErrorResponderMiddleware = async (ctx, next) =>
+      var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
+
+      var configuration = new ConfigurationBuilder()
+        .AddJsonFile("appsettings.json")
+        .AddJsonFile($"appsettings.{environment}.json", optional: true)
+        .AddCommandLine(args)
+        .Build();
+
+      Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
         {
-          if (ctx.Request.Path.Equals(new PathString("/")))
-          {
-            await ctx.Response.WriteAsync("ok");
-          }
-          else
-          {
-            await next.Invoke();
-          }
-        }
-      };
-      
-      var authenticationProviderKey = "TestKey";
-      // Action<IdentityServerAuthenticationOptions> options = o =>
-      // {
-      //   o.Authority = "https://whereyouridentityserverlives.com";
-      //   o.ApiName = "api";
-      //   o.SupportedTokens = SupportedTokens.Both;
-      //   o.ApiSecret = "secret";
-      // };
-      
-      new WebHostBuilder()
-         .UseKestrel()
-         .UseContentRoot(Directory.GetCurrentDirectory())
-         .ConfigureAppConfiguration((hostingContext, config) =>
-         {
-           config
-                     .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
-                     .AddJsonFile("appsettings.json", true, true)
-                     .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", true, true)
-                     .AddJsonFile("ocelot.json")
-                     .AddEnvironmentVariables();
-         })
-         .ConfigureServices(s =>
-         {
-           s.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
-             .AddIdentityServerAuthentication(authenticationProviderKey, options =>
-             {
-               // base-address of your identityserver
-               options.Authority = "https://localhost:5001";
-               // name of the API resource
-               options.ApiName = "api1";
-               options.ApiSecret = "secret";
-             });
-           s.AddOcelot();
-         })
-         .ConfigureLogging((hostingContext, logging) =>
-         {
-           //add your logging
-         })
-         .UseIISIntegration()
-         .Configure(app =>
-         {
-           app.UseOcelot(conf).Wait();
-         })
-         .Build()
-         .Run();
+          webBuilder.UseStartup<Startup>()
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+              config
+                .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
+                .AddJsonFile("appsettings.json", true, true)
+                .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", true, true)
+                .AddJsonFile("ocelot.json")
+                .AddJsonFile($"configuration.{hostingContext.HostingEnvironment.EnvironmentName}.json")
+                .AddEnvironmentVariables();
+            })
+            .ConfigureLogging((hostingContext, logging) =>
+            {
+              //add your logging
+    #if DEBUG
+                  logging.AddDebug().AddConsole();
+    #endif
+              })
+            .UseConfiguration(configuration);
+        }).Build().Run();
+
+      // new WebHostBuilder()
+      //    .UseKestrel()
+      //    .UseContentRoot(Directory.GetCurrentDirectory())
+      //    .ConfigureAppConfiguration((hostingContext, config) =>
+      //    {
+      //      config
+      //                .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
+      //                .AddJsonFile("appsettings.json", true, true)
+      //                .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", true, true)
+      //                .AddJsonFile("ocelot.json")
+      //                .AddEnvironmentVariables();
+      //    })
+      //    .ConfigureServices(s =>
+      //    {
+      //      
+      //    })
+      //    .ConfigureLogging((hostingContext, logging) =>
+      //    {
+      //      //add your logging
+      //      #if DEBUG
+      //      logging.AddDebug().AddConsole();
+      //      #endif
+      //    })
+      //    .UseIISIntegration()
+      //    .Configure(app =>
+      //    {
+      //      app.UseOcelot(conf).Wait();
+      //    })
+      //    .Build()
+      //    .Run();
     }
   }
 }
