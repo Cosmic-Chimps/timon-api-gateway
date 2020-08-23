@@ -31,14 +31,22 @@ namespace ApiGateway
             
             var authenticationProviderKey = identityServerOptions.AuthenticationProviderKey;
             
+            // services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+            //     .AddIdentityServerAuthentication(authenticationProviderKey, options =>
+            //     {
+            //         // base-address of your identityserver
+            //         options.Authority = identityServerOptions.Authority;
+            //         // name of the API resource
+            //         options.ApiName = identityServerOptions.ApiName;
+            //         options.ApiSecret = identityServerOptions.ApiSecret;
+            //     });
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
-                .AddIdentityServerAuthentication(authenticationProviderKey, options =>
+                .AddJwtBearer(authenticationProviderKey, options =>
                 {
                     // base-address of your identityserver
                     options.Authority = identityServerOptions.Authority;
                     // name of the API resource
-                    options.ApiName = identityServerOptions.ApiName;
-                    options.ApiSecret = identityServerOptions.ApiSecret;
+                    options.Audience = identityServerOptions.ApiName;
                 });
             services.AddOcelot();
         }
