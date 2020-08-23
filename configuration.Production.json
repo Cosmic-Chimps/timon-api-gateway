@@ -9,7 +9,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "links.openfaas-fn.svc",
+          "Host": "timon-links.openfaas-fn.svc",
           "Port": 8080
         }
       ]
@@ -23,7 +23,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "links.openfaas-fn.svc",
+          "Host": "timon-links.openfaas-fn.svc",
           "Port": 8080
         }
       ],
