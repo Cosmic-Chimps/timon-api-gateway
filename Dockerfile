@@ -20,6 +20,9 @@ RUN cp localhost.crt /usr/local/share/ca-certificates
 RUN cp localhost2.crt /usr/local/share/ca-certificates
 RUN update-ca-certificates
 
+RUN chmod 777 localhost.pfx
+RUN chmod 777 localhost2.pfx
+
 ENV ASPNETCORE_ENVIRONMENT=Production
 #ENV ASPNETCORE_URLS="http://*:8080;https://*:8443"
 ENV ASPNETCORE_URLS="http://*:8080"
