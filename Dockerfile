@@ -13,8 +13,6 @@ FROM build AS publish
 RUN dotnet publish "ApiGateway.csproj" -c Release -o /app/publish
 
 FROM base AS final
-RUN useradd -u 8877 docker
-USER docker
 WORKDIR /app
 COPY --from=publish /app/publish .
 
@@ -28,4 +26,6 @@ ENV ASPNETCORE_URLS="http://*:8080"
 EXPOSE 8080
 #EXPOSE 8443
 
+RUN useradd -u 8877 docker
+USER docker
 ENTRYPOINT ["dotnet", "ApiGateway.dll"]
