@@ -17,6 +17,11 @@ RUN useradd -u 8877 docker
 USER docker
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+RUN cp localhost.crt /usr/local/share/ca-certificates
+RUN cp localhost2.crt /usr/local/share/ca-certificates
+RUN update-ca-certificates
+
 ENV ASPNETCORE_ENVIRONMENT=Production
 #ENV ASPNETCORE_URLS="http://*:8080;https://*:8443"
 ENV ASPNETCORE_URLS="http://*:8080"
