@@ -17,7 +17,7 @@
     {
       "UpstreamPathTemplate": "/link",
       "UpstreamHttpMethod": [
-        "POST"
+        "Post"
       ],
       "DownstreamPathTemplate": "/",
       "DownstreamScheme": "http",
