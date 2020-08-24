@@ -46,6 +46,28 @@ namespace ApiGateway
             //         options.Authority = identityServerOptions.Authority;
             //         options.Audience = identityServerOptions.ApiName;
             //     });
+            
+// #if DEBUG
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
+// #else
+//             var allowedDomains = Configuration["AllowedDomains"];
+//             services.AddCors(options =>
+//             {
+//                 options.AddPolicy("CorsPolicy",
+//                     builder => builder.WithOrigins("allowedDomains")
+//                         .AllowAnyMethod()
+//                         .AllowAnyHeader()
+//                         .AllowCredentials());
+//             });
+// #endif
+            
             services.AddOcelot();
         }
 
@@ -72,6 +94,8 @@ namespace ApiGateway
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("CorsPolicy");
             await app.UseOcelot(conf);
         }
     }
