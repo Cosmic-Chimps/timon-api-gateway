@@ -53,8 +53,7 @@ namespace ApiGateway
                 options.AddPolicy("CorsPolicy",
                     builder => builder.AllowAnyOrigin()
                         .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials());
+                        .AllowAnyHeader());
             });
 // #else
 //             var allowedDomains = Configuration["AllowedDomains"];
