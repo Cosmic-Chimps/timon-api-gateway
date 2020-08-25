@@ -15,6 +15,20 @@
       ]
     },
     {
+      "UpstreamPathTemplate": "/.meta/get/link",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamPathTemplate": "/.meta/get/link",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-links.openfaas-fn.svc",
+          "Port": 8080
+        }
+      ]
+    },
+    {
       "UpstreamPathTemplate": "/link",
       "UpstreamHttpMethod": [
         "Post"
