@@ -12,7 +12,12 @@
           "Host": "hola.openfaas-fn.svc",
           "Port": 8080
         }
-      ]
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": [
+        ]
+      }
     },
     {
       "UpstreamPathTemplate": "/link",
