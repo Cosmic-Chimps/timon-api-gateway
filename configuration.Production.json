@@ -1,6 +1,20 @@
 {
   "Routes": [
     {
+      "UpstreamPathTemplate": "/hola",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamPathTemplate": "/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "hola.openfaas-fn.svc",
+          "Port": 8080
+        }
+      ]
+    },
+    {
       "UpstreamPathTemplate": "/link",
       "UpstreamHttpMethod": [
         "Get"
