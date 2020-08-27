@@ -3,7 +3,7 @@
     {
       "UpstreamPathTemplate": "/hola",
       "UpstreamHttpMethod": [
-        "Get"
+        "Post"
       ],
       "DownstreamPathTemplate": "/",
       "DownstreamScheme": "http",
