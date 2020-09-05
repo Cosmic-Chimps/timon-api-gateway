@@ -1,11 +1,11 @@
 {
   "Routes": [
     {
-      "UpstreamPathTemplate": "/link",
+      "UpstreamPathTemplate": "/channels",
       "UpstreamHttpMethod": [
         "Get"
       ],
-      "DownstreamPathTemplate": "/",
+      "DownstreamPathTemplate": "/channels",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -15,11 +15,63 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/link",
+      "UpstreamPathTemplate": "/channels",
       "UpstreamHttpMethod": [
         "POST"
       ],
-      "DownstreamPathTemplate": "/",
+      "DownstreamPathTemplate": "/channels",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-links.127.0.0.1.nip.io",
+          "Port": 5011
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": [
+        ]
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/links/{linkId}/tags",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/links/{linkId}/tags",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-links.127.0.0.1.nip.io",
+          "Port": 5011
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": [
+        ]
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/links",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamPathTemplate": "/links",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-links.127.0.0.1.nip.io",
+          "Port": 5011
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/links",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/links",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -39,6 +91,20 @@
         "Post"
       ],
       "DownstreamPathTemplate": "/login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-identity.127.0.0.1.nip.io",
+          "Port": 5000
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/refresh-token",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
+      "DownstreamPathTemplate": "/refresh-token",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
