@@ -53,6 +53,53 @@
       }
     },
     {
+      "UpstreamPathTemplate": "/links/{linkId}/tag/{tagName}",
+      "UpstreamHttpMethod": [
+        "Delete"
+      ],
+      "DownstreamPathTemplate": "/links/{linkId}/tag/{tagName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-links.127.0.0.1.nip.io",
+          "Port": 5011
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": [
+        ]
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/links/by-tag/{tagName}",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamPathTemplate": "/links/by-tag/{tagName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-links.127.0.0.1.nip.io",
+          "Port": 5011
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/links/search/{term}",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamPathTemplate": "/links/search/{term}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "timon-links.127.0.0.1.nip.io",
+          "Port": 5011
+        }
+      ]
+    },
+    {
       "UpstreamPathTemplate": "/links",
       "UpstreamHttpMethod": [
         "Get"
