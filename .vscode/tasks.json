@@ -1,7 +1,6 @@
 {
     "version": "2.0.0",
-    "tasks": [
-        {
+    "tasks": [{
             "label": "build",
             "command": "dotnet",
             "type": "process",
@@ -37,6 +36,22 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "appId": "timon-api-gateway",
+            "appPort": 5002,
+            "label": "daprd-debug",
+            "type": "daprd",
+            "dependsOn": "build",
+            "componentsPath": "./components",
+            "enableMetrics": false,
+            "grpcPort": 50003,
+            "httpPort": 3501
+        },
+        {
+            "appId": "timon-api-gateway",
+            "label": "daprd-down",
+            "type": "daprd-down"
         }
     ]
 }

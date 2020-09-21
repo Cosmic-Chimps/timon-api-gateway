@@ -5,12 +5,12 @@
       "UpstreamHttpMethod": [
         "Get"
       ],
-      "DownstreamPathTemplate": "/channels",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/channels",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "timon-links.127.0.0.1.nip.io",
-          "Port": 5011
+          "Host": "localhost",
+          "Port": 3500
         }
       ]
     },
@@ -19,18 +19,17 @@
       "UpstreamHttpMethod": [
         "POST"
       ],
-      "DownstreamPathTemplate": "/channels",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/channels",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "timon-links.127.0.0.1.nip.io",
-          "Port": 5011
+          "Host": "localhost",
+          "Port": 3500
         }
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "TimonIdentityServer",
-        "AllowedScopes": [
-        ]
+        "AllowedScopes": []
       }
     },
     {
@@ -38,18 +37,17 @@
       "UpstreamHttpMethod": [
         "POST"
       ],
-      "DownstreamPathTemplate": "/links/{linkId}/tags",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/links/{linkId}/tags",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "timon-links.127.0.0.1.nip.io",
-          "Port": 5011
+          "Host": "localhost",
+          "Port": 3500
         }
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "TimonIdentityServer",
-        "AllowedScopes": [
-        ]
+        "AllowedScopes": []
       }
     },
     {
@@ -57,18 +55,17 @@
       "UpstreamHttpMethod": [
         "Delete"
       ],
-      "DownstreamPathTemplate": "/links/{linkId}/tag/{tagName}",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/links/{linkId}/tag/{tagName}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "timon-links.127.0.0.1.nip.io",
-          "Port": 5011
+          "Host": "localhost",
+          "Port": 3500
         }
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "TimonIdentityServer",
-        "AllowedScopes": [
-        ]
+        "AllowedScopes": []
       }
     },
     {
@@ -76,12 +73,12 @@
       "UpstreamHttpMethod": [
         "Get"
       ],
-      "DownstreamPathTemplate": "/links/by-tag/{tagName}",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/links/by-tag/{tagName}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "timon-links.127.0.0.1.nip.io",
-          "Port": 5011
+          "Host": "localhost",
+          "Port": 3500
         }
       ]
     },
@@ -90,12 +87,12 @@
       "UpstreamHttpMethod": [
         "Get"
       ],
-      "DownstreamPathTemplate": "/links/search/{term}",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/links/search/{term}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "timon-links.127.0.0.1.nip.io",
-          "Port": 5011
+          "Host": "localhost",
+          "Port": 3500
         }
       ]
     },
@@ -104,12 +101,12 @@
       "UpstreamHttpMethod": [
         "Get"
       ],
-      "DownstreamPathTemplate": "/links",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/links",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "timon-links.127.0.0.1.nip.io",
-          "Port": 5011
+          "Host": "localhost",
+          "Port": 3500
         }
       ]
     },
@@ -118,18 +115,17 @@
       "UpstreamHttpMethod": [
         "POST"
       ],
-      "DownstreamPathTemplate": "/links",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/links",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "timon-links.127.0.0.1.nip.io",
-          "Port": 5011
+          "Host": "localhost",
+          "Port": 3500
         }
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "TimonIdentityServer",
-        "AllowedScopes": [
-        ]
+        "AllowedScopes": []
       }
     },
     {
@@ -137,12 +133,12 @@
       "UpstreamHttpMethod": [
         "Post"
       ],
-      "DownstreamPathTemplate": "/login",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-identity-server/method/login",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "timon-identity.127.0.0.1.nip.io",
-          "Port": 5000
+          "Host": "localhost",
+          "Port": 3500
         }
       ]
     },
@@ -151,12 +147,12 @@
       "UpstreamHttpMethod": [
         "Post"
       ],
-      "DownstreamPathTemplate": "/refresh-token",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-identity-server/method/refresh-token",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "timon-identity.127.0.0.1.nip.io",
-          "Port": 5000
+          "Host": "localhost",
+          "Port": 3500
         }
       ]
     },
@@ -165,12 +161,12 @@
       "UpstreamHttpMethod": [
         "Post"
       ],
-      "DownstreamPathTemplate": "/register",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-identity-server/method/register",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "timon-identity.127.0.0.1.nip.io",
-          "Port": 5000
+          "Host": "localhost",
+          "Port": 3500
         }
       ]
     }
