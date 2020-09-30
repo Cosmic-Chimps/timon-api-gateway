@@ -46,7 +46,7 @@
             "componentsPath": "./components",
             "enableMetrics": false,
             "grpcPort": 50003,
-            "httpPort": 3501
+            "httpPort": 3500
         },
         {
             "appId": "timon-api-gateway",

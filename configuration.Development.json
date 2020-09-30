@@ -1,93 +1,11 @@
 {
   "Routes": [
     {
-      "UpstreamPathTemplate": "/channels",
-      "UpstreamHttpMethod": [
-        "Get"
-      ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/channels",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 3500
-        }
-      ]
-    },
-    {
-      "UpstreamPathTemplate": "/channels",
-      "UpstreamHttpMethod": [
-        "POST"
-      ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/channels",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 3500
-        }
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "TimonIdentityServer",
-        "AllowedScopes": []
-      }
-    },
-    {
-      "UpstreamPathTemplate": "/links/{linkId}/tags",
-      "UpstreamHttpMethod": [
-        "POST"
-      ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/links/{linkId}/tags",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 3500
-        }
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "TimonIdentityServer",
-        "AllowedScopes": []
-      }
-    },
-    {
-      "UpstreamPathTemplate": "/links/{linkId}/tag/{tagName}",
-      "UpstreamHttpMethod": [
-        "Delete"
-      ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/links/{linkId}/tag/{tagName}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 3500
-        }
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "TimonIdentityServer",
-        "AllowedScopes": []
-      }
-    },
-    {
       "UpstreamPathTemplate": "/links/by-tag/{tagName}",
       "UpstreamHttpMethod": [
         "Get"
       ],
       "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/links/by-tag/{tagName}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 3500
-        }
-      ]
-    },
-    {
-      "UpstreamPathTemplate": "/links/search/{term}",
-      "UpstreamHttpMethod": [
-        "Get"
-      ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/links/search/{term}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -169,6 +87,153 @@
           "Port": 3500
         }
       ]
+    },
+    {
+      "UpstreamPathTemplate": "/clubs/{clubId}/links",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/club/{clubId}/links",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3500
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/clubs",
+      "UpstreamHttpMethod": [
+        "POST",
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3500
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/clubs/{clubId}/channels",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/channels",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3500
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/clubs/{clubId}/channels/{channelId}/links",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/channels/{channelId}/links",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3500
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/clubs/{clubId}/links/tags/{tagName}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/links/tags/{tagName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3500
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/clubs/{clubId}/links/search/{term}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/links/search/{term}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3500
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/clubs/{clubId}/links/{linkId}/tags",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/links/{linkId}/tags",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3500
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/clubs/{clubId}/links/{linkId}/tags/{tagName}",
+      "UpstreamHttpMethod": [
+        "DELETE"
+      ],
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/links/{linkId}/tags/{tagName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3500
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": []
+      }
     }
   ],
   "GlobalConfiguration": {
