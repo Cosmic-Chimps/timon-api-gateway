@@ -234,6 +234,24 @@
         "AuthenticationProviderKey": "TimonIdentityServer",
         "AllowedScopes": []
       }
+    },
+    {
+      "UpstreamPathTemplate": "/clubs/{clubId}/links/by-tag/{tagName}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/links/tags/{tagName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3500
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": []
+      }
     }
   ],
   "GlobalConfiguration": {
