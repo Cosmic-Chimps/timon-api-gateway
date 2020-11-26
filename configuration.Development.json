@@ -269,7 +269,43 @@
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "TimonIdentityServer",
         "AllowedScopes": []
-      },
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/clubs/subscribe",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/subscribe",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3500
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/clubs/unsubscribe",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/unsubscribe",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3500
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TimonIdentityServer",
+        "AllowedScopes": []
+      }
     }
   ],
   "GlobalConfiguration": {
