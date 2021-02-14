@@ -3,14 +3,14 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
-COPY ["ApiGateway.csproj", "./"]
-RUN dotnet restore "./ApiGateway.csproj"
+COPY ["TimonApiGateway.csproj", "./"]
+RUN dotnet restore "./TimonApiGateway.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "ApiGateway.csproj" -c Release -o /app/build
+RUN dotnet build "TimonApiGateway.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "ApiGateway.csproj" -c Release -o /app/publish
+RUN dotnet publish "TimonApiGateway.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
@@ -31,4 +31,4 @@ EXPOSE 8080
 
 RUN useradd -u 8877 docker
 USER docker
-ENTRYPOINT ["dotnet", "ApiGateway.dll"]
+ENTRYPOINT ["dotnet", "TimonApiGateway.dll"]

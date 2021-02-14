@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 using Ocelot.Middleware;
 using Ocelot.DependencyInjection;
 
-namespace ApiGateway
+namespace TimonApiGateway
 {
   class Program
   {
@@ -42,10 +42,10 @@ namespace ApiGateway
             .ConfigureLogging((hostingContext, logging) =>
             {
               //add your logging
-    #if DEBUG
-                  logging.AddDebug().AddConsole();
-    #endif
-              })
+#if DEBUG
+              logging.AddDebug().AddConsole();
+#endif
+            })
             .UseConfiguration(configuration);
         }).Build().Run();
 
@@ -63,7 +63,7 @@ namespace ApiGateway
       //    })
       //    .ConfigureServices(s =>
       //    {
-      //      
+      //
       //    })
       //    .ConfigureLogging((hostingContext, logging) =>
       //    {

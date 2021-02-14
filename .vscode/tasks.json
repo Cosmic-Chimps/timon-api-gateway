@@ -1,12 +1,13 @@
 {
     "version": "2.0.0",
-    "tasks": [{
+    "tasks": [
+        {
             "label": "build",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/ApiGateway.csproj",
+                "${workspaceFolder}/src/TimonApiGateway.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -18,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/ApiGateway.csproj",
+                "${workspaceFolder}/src/TimonApiGateway.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -31,7 +32,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/ApiGateway.csproj",
+                "${workspaceFolder}/src/TimonApiGateway.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -43,7 +44,7 @@
             "label": "daprd-debug",
             "type": "daprd",
             "dependsOn": "build",
-            "componentsPath": "./components",
+            "componentsPath": "./src/components",
             "enableMetrics": false,
             "grpcPort": 50003,
             "httpPort": 3500

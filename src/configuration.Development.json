@@ -5,7 +5,7 @@
       "UpstreamHttpMethod": [
         "Get"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/links/by-tag/{tagName}",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/links/by-tag/{tagName}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -19,7 +19,7 @@
       "UpstreamHttpMethod": [
         "Get"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/links",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/links",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -33,7 +33,7 @@
       "UpstreamHttpMethod": [
         "POST"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/links",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/links",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -93,7 +93,7 @@
       "UpstreamHttpMethod": [
         "GET"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/club/{clubId}/links",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/club/{clubId}/links",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -112,7 +112,7 @@
         "POST",
         "GET"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/clubs",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -131,7 +131,7 @@
         "GET",
         "POST"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/channels",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/clubs/{clubId}/channels",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -150,7 +150,7 @@
         "GET",
         "POST"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/channels/{channelId}/links",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/clubs/{clubId}/channels/{channelId}/links",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -168,7 +168,7 @@
       "UpstreamHttpMethod": [
         "GET"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/links/tags/{tagName}",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/clubs/{clubId}/links/tags/{tagName}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -186,7 +186,7 @@
       "UpstreamHttpMethod": [
         "GET"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/links/search/{term}",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/clubs/{clubId}/links/search/{term}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -204,7 +204,7 @@
       "UpstreamHttpMethod": [
         "POST"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/links/{linkId}/tags",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/clubs/{clubId}/links/{linkId}/tags",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -222,7 +222,7 @@
       "UpstreamHttpMethod": [
         "DELETE"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/links/{linkId}/tags/{tagName}",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/clubs/{clubId}/links/{linkId}/tags/{tagName}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -240,7 +240,7 @@
       "UpstreamHttpMethod": [
         "GET"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/links/tags/{tagName}",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/clubs/{clubId}/links/tags/{tagName}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -258,7 +258,7 @@
       "UpstreamHttpMethod": [
         "GET"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/others",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/clubs/others",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -276,7 +276,7 @@
       "UpstreamHttpMethod": [
         "POST"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/subscribe",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/clubs/subscribe",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -294,7 +294,7 @@
       "UpstreamHttpMethod": [
         "POST"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/unsubscribe",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/clubs/unsubscribe",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -312,7 +312,7 @@
       "UpstreamHttpMethod": [
         "GET"
       ],
-      "DownstreamPathTemplate": "/v1.0/invoke/timon-link-server/method/clubs/{clubId}/members",
+      "DownstreamPathTemplate": "/v1.0/invoke/timon-server/method/app/clubs/{clubId}/members",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
