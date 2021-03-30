@@ -34,10 +34,10 @@ namespace TimonApiGateway
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(authenticationProviderKey, options =>
                 {
-              // base-address of your identityserver
-              options.Authority = identityServerOptions.Authority;
-              // name of the API resource
-              options.ApiName = identityServerOptions.ApiName;
+                    // base-address of your identityserver
+                    options.Authority = identityServerOptions.Authority;
+                    // name of the API resource
+                    options.ApiName = identityServerOptions.ApiName;
                     options.ApiSecret = identityServerOptions.ApiSecret;
                 });
             // services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
@@ -56,7 +56,6 @@ namespace TimonApiGateway
                         .AllowAnyHeader());
             });
 
-            services.AddHealthChecks();
             // #else
             //             var allowedDomains = Configuration["AllowedDomains"];
             //             services.AddCors(options =>
@@ -80,7 +79,7 @@ namespace TimonApiGateway
             {
                 PreErrorResponderMiddleware = async (ctx, next) =>
                 {
-                    if (ctx.Request.Path.Equals(new PathString("/")))
+                    if (ctx.Request.Path.Equals(new PathString("/health")))
                     {
                         await ctx.Response.WriteAsync("ok");
                     }
@@ -95,11 +94,6 @@ namespace TimonApiGateway
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapHealthChecks("/health");
-            });
 
             app.UseCors("CorsPolicy");
             await app.UseOcelot(conf);
