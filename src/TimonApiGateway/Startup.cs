@@ -81,6 +81,7 @@ namespace TimonApiGateway
                 {
                     if (ctx.Request.Path.Equals(new PathString("/health")))
                     {
+                        ctx.Response.StatusCode = 200;
                         await ctx.Response.WriteAsync("ok");
                     }
                     else
