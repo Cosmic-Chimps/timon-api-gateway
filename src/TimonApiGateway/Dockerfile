@@ -20,10 +20,6 @@ RUN update-ca-certificates
 RUN chmod 777 .MyCertificate.pfx
 
 ENV ASPNETCORE_ENVIRONMENT=Production
-ENV ASPNETCORE_URLS="https://*:5001"
-EXPOSE 5001
-
-ENV ASPNETCORE_ENVIRONMENT=Production
 ENV ASPNETCORE_URLS="http://*:8080"
 EXPOSE 8080
 
