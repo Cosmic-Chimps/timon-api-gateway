@@ -11,7 +11,7 @@
       "preLaunchTask": "build",
       "program": "${workspaceFolder}/src/TimonApiGateway/bin/Debug/net5.0/TimonApiGateway.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/src",
+      "cwd": "${workspaceFolder}/src/TimonApiGateway",
       "console": "internalConsole",
       "stopAtEntry": false
     },

@@ -10,13 +10,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ocelot.json">
+    <None Include="ocelot.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update=".MyCertificate.crt">
+    <None Include=".MyCertificate.crt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update=".MyCertificate.pfx">
+      <None Include=".MyCertificate.pfx">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Include="configuration.Development.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Include="configuration.Staging.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Include="configuration.Production.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
   </ItemGroup>

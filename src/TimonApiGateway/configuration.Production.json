@@ -9,7 +9,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ]
@@ -23,7 +23,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ]
@@ -37,7 +37,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -55,7 +55,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ]
@@ -69,7 +69,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ]
@@ -83,7 +83,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ]
@@ -97,7 +97,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -116,7 +116,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -135,7 +135,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -154,7 +154,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -172,7 +172,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -190,7 +190,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -208,7 +208,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -226,7 +226,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -244,7 +244,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -262,7 +262,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -280,7 +280,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -298,7 +298,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -316,7 +316,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -334,7 +334,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -352,7 +352,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -370,7 +370,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -388,7 +388,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -406,7 +406,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ],
@@ -425,7 +425,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ]
@@ -440,7 +440,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ]
@@ -455,13 +455,13 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "127.0.0.1",
           "Port": 3500
         }
       ]
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://api-gateway-myproject.127.0.0.1.nip.io/"
+    "BaseUrl": "http://timon-api-gateway:8080"
   }
 }
