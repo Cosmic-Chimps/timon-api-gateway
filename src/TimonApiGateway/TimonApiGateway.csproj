@@ -13,10 +13,10 @@
     <None Include="ocelot.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include=".MyCertificate.crt">
+    <None Include="timon-identity-server.crt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Include=".MyCertificate.pfx">
+      <None Include="timon-identity-server.pfx">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
       <None Include="configuration.Development.json">
